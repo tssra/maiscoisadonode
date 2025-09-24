@@ -1,31 +1,32 @@
 {
- 
-    "usuarios": [
-        {
-            "id": 1,
-            "nome": "Sa",
-            "email": "sa.m@gmail.com",
-            "senha": "7"
-        },
-        {
-            "id": 2,
-            "nome": "Ale",
-            "email": "Aless@gmail.com",
-            "senha": "2014"
-        },
-        {
-            "id": 3,
-            "nome": "Mateus",
-            "email": "pbost@gmail.com",
-            "senha": "336"
-        }
-    ]
-
-
-
-
-
-
-
-
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Sa",
+      "email": "sa.m@gmail.com",
+      "senha": "7"
+    },
+    {
+      "id": 2,
+      "nome": "Ale",
+      "email": "Aless@gmail.com",
+      "senha": "2014"
+    },
+    {
+      "id": 3,
+      "nome": "Mateus",
+      "email": "pbost@gmail.com",
+      "senha": "336"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "nome",
+      "descrição": "lalala",
+      "preço": "20,2",
+      "quantidade": "12",
+      "categoria": "não sei"
+    }
+  ]
 }

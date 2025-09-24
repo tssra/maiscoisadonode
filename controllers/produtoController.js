@@ -1,28 +1,24 @@
-const path = require ("path") //importa o módulo de path pra saber as pastas e arquivos do projeto
-
-const userModel = require("../models/userModel") //importa tudo que tem no model
-
-module.exports = { //responde a requisição mostrando a visualização da tela de login
+module.exports = {
     formLogin : (req,res) => {
         res.render("login")
     },
 
-    //função para levar os dados preenchidos para o model realizar o login
+   
     loginUsuario : (req,res) => {
-        const {email, senha} = req.body  //cria um objeto com as informações do body, retirados dos inputs
-        const logado = userModel.login(email,senha) //manda as informações do objeto para o model
+        const {nome,preco} = req.body  
+        const logado = userModel.login(nome,preco)
 
-        if(!logado){//se não conseguir logar, manda uma mensagem de erro
+        if(!logado){
             return res.status(401).json({mensagem: "usuário ou senha inválidos"})
         }
 
-        else{//manda uma mensagem de confirmação
+        else{
             res.json({mensagem: "Login realizado"})
         }
     },
 
     //CRUD
-    formCadastro: (req,res) => { //responde a requisição mostrando a visualização da tela de cadastro
+    formCadastro: (req,res) => { 
         res.render("cadastro")
     },
 
@@ -50,9 +46,8 @@ module.exports = { //responde a requisição mostrando a visualização da tela 
         res.json(usuario) //se achar, devolve as informações via json
     },
 
-    atualizaarUsuario: (req,res) => { 
+    atualizaarUsuario: (req,res) => { //atualizar as infos do usuario
         const id = req.params.id 
-
 
         const {usuario,email,senha} = req.body //busca att para atualizar
 
