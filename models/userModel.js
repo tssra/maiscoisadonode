@@ -11,12 +11,13 @@ module.exports = {
     },
 
     //CRUD
-    salvar : ({usuario,email,senha}) => { //função para cadastrar um novo usuario
+    salvar : ({usuario,email,senha, tipo}) => { //função para cadastrar um novo usuario
         const novoUsuario = {
           id: listaUsuarios.length + 1,
           usuario,
           email,
-          senha
+          senha, 
+          tipo
         }
 
         listaUsuarios.push(novoUsuario)
