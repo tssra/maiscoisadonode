@@ -8,17 +8,19 @@ const path = require('path') //consegue utilizar tudo que o módulo do node faz 
 const caminho = path.join(__dirname, "views") //o join pega e junta duas coisas
 
 const userRoutes = require("./routes/userRoutes") //importa as rotas do usuário
+const produtoRoutes = require("./routes/produtoRoutes") //importa as rotas do usuário
 
 //interpretador de json, pra tratar as informações do body
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
-app.use("/usuarios", userRoutes) //cria uma rota principal para as sub rotas de usuário
+app.use("/usuarios", userRoutes)
+app.use("/produtos", produtoRoutes)
 
 //definindo o ejs como template engine
 app.set('view engine', 'ejs')
 
-app.set("views",path.join(__dirname, "views")) //definindo 'atalho' onde buscar as views
+// app.set("views",path.join(__dirname, "views")) //definindo 'atalho' onde buscar as views
 
 
 //subir o servidor
@@ -42,9 +44,3 @@ app.use((req,res) => {
     res.status(404) //status que deu erro
     res.render("404", {titulo: "Página de erro"})
 })
-
-//bagulho do pokemon
-// app.get("/pokemon", () => {
-//     res.status(200)
-//     res.send("Charizard")
-// })

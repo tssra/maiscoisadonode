@@ -22,11 +22,31 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "nome",
-      "descrição": "lalala",
-      "preço": "20,2",
+      "nome": "ervilha",
+      "descrição": "sla",
+      "preço": "3,5",
       "quantidade": "12",
-      "categoria": "não sei"
+      "categoria": "alimentos"
+    },
+
+    {
+      
+      "id": 2,
+      "nome": "milho",
+      "descrição": "sla2",
+      "preço": "3,5",
+      "quantidade": "12",
+      "categoria": "alimentos"
+    },
+
+    {
+      
+      "id": 3,
+      "nome": "salcicha",
+      "descrição": "sla3",
+      "preço": "12,0",
+      "quantidade": "12",
+      "categoria": "alimentos"
     }
   ]
 }

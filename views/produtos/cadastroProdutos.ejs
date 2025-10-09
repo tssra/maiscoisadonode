@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+
+<main class="container d-flex flex-column flex-fill justify-content-center" >
+<h1  class="text-center">Cadastro de Produto</h1>
+
+<!-- criando formulário -->
+<form action="/produtos/cadastrar" method="POST" >
+
+    <div class="mb-3" >
+     <label for="inputNome" class="form-label fs-2 mt-2" > Nome de produto </label>
+     <input type="text" id="inputNome" class="form-control form-control-lg" placeholder="Digite o nome de produto" name="produtos" required="" >
+    </div>
+
+      <label for="inputDescricao" class="form-label fs-2 mt-2">Descrição</label>
+      <input type="text" id="inputdescricao" class="form-control form-control-lg" placeholder="Digite a descrição do produto" name="descrição" required="" >
+
+      <label for="inputCategoria" class="form-label fs-2 mt-2">Categoria do produto</label>
+      <input type="text" id="inputcategoria" class="form-control form-control-lg" placeholder="Digite a ição" name="descrição" required="" > 
+
+    <label for="frutas">Categoria de produto</label>
+    <select id="frutas" name="frutas">
+    <option value="Alimentos">Alimentos</option>
+    <option value="Limpeza">Limpeza</option>
+    <option value="Vestuário">Vestuário</option>
+    </select>
+
+      <label for="inputPreco" class="form-label fs-2 mt-2">Preço</label>
+      <input type="number" id="inputpreco" class="form-control form-control-lg" placeholder="Digite o preço" name="preço" required="" >
+
+         <label for="inputQuantidade" class="form-label fs-2 mt-2">Quantidade</label>
+      <input type="text" id="inputquantidade" class="form-control form-control-lg" placeholder="Digite a quantidade do produto" name="quantidade" required="" >
+
+      <label for="inputImg" class="form-label fs-2 mt-2">Imagem do Produto</label>
+      <input type="url" name="imgprod" class="form-control form-control-lg" placeholder="Digite o link de imagem do produto">  
+       <img src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png">
+
+      <!-- botão pra envio do formulário -->
+       <button  type="submit" class="btn btn-lg btn-primary" >
+        Cadastrar
+       </button>
+</form>
+</main>
+
+<!-- footer -->
+<%- include('partials/footer') %>
