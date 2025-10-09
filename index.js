@@ -7,8 +7,8 @@ const port = 5000
 const path = require('path') //consegue utilizar tudo que o módulo do node faz nessa variável
 const caminho = path.join(__dirname, "views") //o join pega e junta duas coisas
 
-const userRoutes = require("./routes/userRoutes") //importa as rotas do usuário
-const produtoRoutes = require("./routes/produtoRoutes") //importa as rotas do usuário
+const userRoutes = require('./routes/userRoutes') //importa as rotas do usuário
+const produtoRoutes = require('./routes/produtoRoutes') //importa as rotas do usuário
 
 //interpretador de json, pra tratar as informações do body
 app.use(express.urlencoded({extended:true}))
@@ -18,10 +18,8 @@ app.use("/usuarios", userRoutes)
 app.use("/produtos", produtoRoutes)
 
 //definindo o ejs como template engine
+app.set('views', path.join (__dirname, 'views'));
 app.set('view engine', 'ejs')
-
-// app.set("views",path.join(__dirname, "views")) //definindo 'atalho' onde buscar as views
-
 
 //subir o servidor
 app.listen(port, () => {

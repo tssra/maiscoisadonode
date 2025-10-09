@@ -1,16 +1,18 @@
 const path = require("path");
 
-const userModel = require("../models/produtoModel");
+const db = require('../data/db.json');
+
+const produtoModel = require("../models/produtoModel");
 
 module.exports = {
   formCadastro: (req, res) => {
-    res.render("cadastroProdutos", { titulo: "Cadastro de Produtos"});
+    res.render("produtos/cadastroProdutos", { titulo: "Cadastro de Produtos"});
   },
 
     salvarProduto: (req, res) => {
     const { id, nome, descricao, preco, quantidade, categoria } = req.body;
     produtoNovo = produtoModel.salvar ({ id, nome, descricao, preco, quantidade, categoria })
-    res.render("usuarios/confirmacaoUsuarios", { //não entendi 
+    res.render("views/produtos/cadastroProdutos", { 
     tipo: "cadastro",
     titulo: "Cadastro confirmado",
     produtoNovo

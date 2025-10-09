@@ -1,6 +1,6 @@
 const db = require("../data/db.json")
 
-let listaProdutos = db.usuarios 
+let listaProdutos = db.produtos 
 
 module.exports = {
   
