@@ -5,7 +5,7 @@ const app = express()
 const port = 5000
 
 const path = require('path') //consegue utilizar tudo que o módulo do node faz nessa variável
-const caminho = path.join(__dirname, "views") //o join pega e junta duas coisas
+// const caminho = path.join(__dirname, "views") //o join pega e junta duas coisas
 
 const userRoutes = require('./routes/userRoutes') //importa as rotas do usuário
 const produtoRoutes = require('./routes/produtoRoutes') //importa as rotas do usuário

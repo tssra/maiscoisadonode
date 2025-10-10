@@ -1,4 +1,4 @@
-<%- include('partials/header') %>
+<%- include('../partials/header') %>
 
 
 <main class="container d-flex flex-column flex-fill justify-content-center" >
@@ -9,38 +9,42 @@
 
     <div class="mb-3" >
      <label for="inputNome" class="form-label fs-2 mt-2" > Nome de produto </label>
-     <input type="text" id="inputNome" class="form-control form-control-lg" placeholder="Digite o nome de produto" name="produtos" required="" >
+     <input type="text" id="inputNome" class="form-control form-control-lg" placeholder="Digite o nome de produto" name="nome" required="" >
     </div>
 
-      <label for="inputDescricao" class="form-label fs-2 mt-2">Descrição</label>
-      <input type="text" id="inputdescricao" class="form-control form-control-lg" placeholder="Digite a descrição do produto" name="descrição" required="" >
+    <label for="inputDescricao" class="form-label fs-2 mt-2">Descrição</label>
+    <input type="text" id="inputdescricao" class="form-control form-control-lg" placeholder="Digite a descrição do produto" name="descricao" required="" >
+   
+<div class="row" >
+<div class="col-md-6">
 
-      <label for="inputCategoria" class="form-label fs-2 mt-2">Categoria do produto</label>
-      <input type="text" id="inputcategoria" class="form-control form-control-lg" placeholder="Digite a ição" name="descrição" required="" > 
-
-    <label for="frutas">Categoria de produto</label>
-    <select id="frutas" name="frutas">
+    <label for="inputCategoria" class="form-label fs-2 mt-2" name="categoria">Categoria de produto</label>
+    <select id="categoria" class="form-control form-control-lg">
     <option value="Alimentos">Alimentos</option>
     <option value="Limpeza">Limpeza</option>
     <option value="Vestuário">Vestuário</option>
     </select>
 
       <label for="inputPreco" class="form-label fs-2 mt-2">Preço</label>
-      <input type="number" id="inputpreco" class="form-control form-control-lg" placeholder="Digite o preço" name="preço" required="" >
+      <input type="number" id="inputpreco" class="form-control form-control-lg" placeholder="Digite o preço" name="preco" required="" >
 
          <label for="inputQuantidade" class="form-label fs-2 mt-2">Quantidade</label>
       <input type="text" id="inputquantidade" class="form-control form-control-lg" placeholder="Digite a quantidade do produto" name="quantidade" required="" >
-
+ 
+</div>
+<div class="col-md-6">
       <label for="inputImg" class="form-label fs-2 mt-2">Imagem do Produto</label>
       <input type="url" name="imgprod" class="form-control form-control-lg" placeholder="Digite o link de imagem do produto">  
-       <img src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png">
+       <img src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png" width="200px" height="200px" class="mt-2 d-block mx-auto">
+</div>
+       </div>
 
       <!-- botão pra envio do formulário -->
-       <button  type="submit" class="btn btn-lg btn-primary" >
+       <button  type="submit" class="btn btn-lg btn-primary mt-2" >
         Cadastrar
        </button>
 </form>
 </main>
 
 <!-- footer -->
-<%- include('partials/footer') %>
+<%- include('../partials/footer') %>

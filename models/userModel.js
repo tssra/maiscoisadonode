@@ -41,9 +41,9 @@ module.exports = {
 
         listaUsuarios[index] = { //se achar um usuario, substitui as infos que estavam com nele, pelas novas enviadas
         ...listaUsuarios[index],
-        listaUsuarios: usuario || listaUsuarios [index].usuario,
-        listaUsuarios: email || listaUsuarios [index].email,
-        listaUsuarios: senha || listaUsuarios [index].senha
+        usuario: usuario || listaUsuarios [index].usuario,
+        email: email || listaUsuarios [index].email,
+        senha: senha || listaUsuarios [index].senha
         }
     
         return listaUsuarios[index] //retorna o usuario atualizado

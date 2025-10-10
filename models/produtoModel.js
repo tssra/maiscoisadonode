@@ -4,7 +4,7 @@ let listaProdutos = db.produtos
 
 module.exports = {
   
-    salvar : ({ id, nome, descricao, preco, quantidade, categoria}) => { 
+    salvar : ({ nome, descricao, preco, quantidade, categoria}) => { 
         const novoProduto = {
           id: listaProdutos.length + 1,
           nome,

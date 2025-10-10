@@ -5,16 +5,16 @@
     <div class="w-50 mx-auto align-content-center bg-success" style="height: 300px;" >
 
         <!-- mostra que o cadastro foi realizado -->
-        <% if ("cadastro") { %>
+        <% if (tipo === "cadastro") { %>
             <!-- pega o nome de quem foi cadastrado, vindo do objeto usuarioNovo -->
          <h1 class="text-white" >Cadastro de <%- usuarioNovo.usuario %> realizado</h1>
 
          <!-- se a pagina chamada de edição foi chamada, mostra que o usuario foi editado -->
-        <% } else if (tipo == "edicao") { %>
+        <% } else if (tipo === "edicao") { %>
         <h1 class="text-white" >Edição de <%- atualizado.usuario %> confirmado</h1>
 
         <!-- deletado -->
-        <% } else if { %>
+        <% } else { %>
         <h1 class="text-white" >Usuário <%- deletado.usuario %> excluído</h1>
         <% } %>
 

@@ -12,7 +12,7 @@ module.exports = {
     salvarProduto: (req, res) => {
     const { id, nome, descricao, preco, quantidade, categoria } = req.body;
     produtoNovo = produtoModel.salvar ({ id, nome, descricao, preco, quantidade, categoria })
-    res.render("views/produtos/cadastroProdutos", { 
+    res.render("produtos/confirmacaoProdutos", { 
     tipo: "cadastro",
     titulo: "Cadastro confirmado",
     produtoNovo
