@@ -18,8 +18,11 @@ app.use("/usuarios", userRoutes)
 app.use("/produtos", produtoRoutes)
 
 //definindo o ejs como template engine
-app.set('views', path.join (__dirname, 'views'));
 app.set('view engine', 'ejs')
+
+app.set('views', path.join (__dirname, 'views'));
+
+app.use(express.static('public'))
 
 //subir o servidor
 app.listen(port, () => {

@@ -7,17 +7,19 @@
 <!-- criando formulário -->
 <form action="/produtos/cadastrar" method="POST" >
 
+    <!-- nome do produto -->
     <div class="mb-3" >
      <label for="inputNome" class="form-label fs-2 mt-2" > Nome de produto </label>
      <input type="text" id="inputNome" class="form-control form-control-lg" placeholder="Digite o nome de produto" name="nome" required="" >
     </div>
 
+    <!-- descrição -->
     <label for="inputDescricao" class="form-label fs-2 mt-2">Descrição</label>
     <input type="text" id="inputdescricao" class="form-control form-control-lg" placeholder="Digite a descrição do produto" name="descricao" required="" >
    
 <div class="row" >
 <div class="col-md-6">
-
+ <!-- categoria -->
     <label for="inputCategoria" class="form-label fs-2 mt-2" name="categoria">Categoria de produto</label>
     <select id="categoria" class="form-control form-control-lg">
     <option value="Alimentos">Alimentos</option>
@@ -25,17 +27,20 @@
     <option value="Vestuário">Vestuário</option>
     </select>
 
+    <!-- preço -->
       <label for="inputPreco" class="form-label fs-2 mt-2">Preço</label>
       <input type="number" id="inputpreco" class="form-control form-control-lg" placeholder="Digite o preço" name="preco" required="" >
 
+      <!-- quantidade -->
          <label for="inputQuantidade" class="form-label fs-2 mt-2">Quantidade</label>
       <input type="text" id="inputquantidade" class="form-control form-control-lg" placeholder="Digite a quantidade do produto" name="quantidade" required="" >
  
 </div>
+<!-- imagem do produto -->
 <div class="col-md-6">
       <label for="inputImg" class="form-label fs-2 mt-2">Imagem do Produto</label>
-      <input type="url" name="imgprod" class="form-control form-control-lg" placeholder="Digite o link de imagem do produto">  
-       <img src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png" width="200px" height="200px" class="mt-2 d-block mx-auto">
+      <input type="url" name="imgUrl" class="form-control form-control-lg" id="inputImagem" placeholder="Digite o link de imagem do produto">  
+       <img src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png" id="previewImagem" width="250px" height="250px" class="mt-2 d-block mx-auto">
 </div>
        </div>
 
@@ -44,6 +49,26 @@
         Cadastrar
        </button>
 </form>
+
+<!-- codigo para a img ser alterada de acordo com o que a pessoa colocar -->
+<script>
+    //variável pra acessar a caixinha de input da imagem
+    const inputImagem = document.getElementById("inputImagem")
+
+    //variável para acessar a imagem
+    const previewImagem = document.getElementById("previewImagem")
+
+    // variavel para imagem padrão, caso a pessoa não tenha colocado nadinha
+    const imagemPadrão = "https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png"
+
+    inputImagem.addEventListener("input", () => {
+        // guarda o que a pessoa colocou na caixinha na variável url
+        const url = inputImagem.value
+
+        // troca o valor do src da iamgem, pelo que o usuario digitou na caixinha
+        previewImagem.src = url || imagemPadrão
+    })
+</script>
 </main>
 
 <!-- footer -->
