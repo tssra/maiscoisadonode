@@ -53,7 +53,8 @@ module.exports = {
   // Função para mostrar todos os usuarios
   listarUsuarios: (req, res) => {
     const usuarios = userModel.listarTodos();
-    res.json(usuarios);
+   res.render("usuarios/listaUsuarios", { usuarios, titulo: "Lista de usuários"})
+   
     // res.render("usuarios", { usuarios });
   },
   // Função para mostrar apenas um usuario

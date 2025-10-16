@@ -2,20 +2,20 @@
   "usuarios": [
     {
       "id": 1,
-      "nome": "Sa",
+      "usuario": "Sa",
       "email": "sa.m@gmail.com",
       "senha": "7"
     },
     {
       "id": 2,
-      "nome": "Ale",
+      "usuario": "Ale",
       "email": "Aless@gmail.com",
       "senha": "2014"
     },
     {
       "id": 3,
-      "nome": "Mateus",
-      "email": "pbost@gmail.com",
+      "usuario": "sla",
+      "email": "oooo@gmail.com",
       "senha": "336"
     }
   ],
@@ -23,8 +23,8 @@
     {
       "id": 1,
       "nome": "ervilha",
-      "descrição": "sla",
-      "preço": "3,5",
+      "descricao": "sla",
+      "preco": "3,5",
       "quantidade": "12",
       "categoria": "alimentos"
     },
@@ -33,8 +33,8 @@
       
       "id": 2,
       "nome": "milho",
-      "descrição": "sla2",
-      "preço": "3,5",
+      "descricao": "sla2",
+      "preco": "3,5",
       "quantidade": "12",
       "categoria": "alimentos"
     },
@@ -43,8 +43,8 @@
       
       "id": 3,
       "nome": "salcicha",
-      "descrição": "sla3",
-      "preço": "12,0",
+      "descricao": "sla3",
+      "preco": "12,0",
       "quantidade": "12",
       "categoria": "alimentos"
     }

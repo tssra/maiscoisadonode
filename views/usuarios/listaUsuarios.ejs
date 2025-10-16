@@ -1,9 +1,76 @@
-
 <%- include('../partials/header') %>
 
+<main class="container text-center mt-3">
+  <h1>LISTA DE USUÁRIOS</h1>
+  <a href="/usuarios/cadastrar">
+    <button class="btn btn-lg btn-primary">
+      <i class="bi bi-bookmark-heart"></i>
+      Cadastrar
+    </button>
+  </a>
 
-<main>
-<h1>lista de usuarios</h1>
+  <!-- criando a tabela de acordo c a lista de usuarios -->
+  <% if (usuarios && usuarios.length > 0) { %>
+  <!-- criando a tabela -->
+  <table class="table table-striped table-hover align-middle mt-5">
+    <!-- cabeçalho da tabela -->
+    <thead class="table-white">
+      <tr class="text-center">
+        <th scope="col">ID</th>
+        <th scope="col">Usuário</th>
+        <th scope="col">Email</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Ações</th>
+      </tr>
+
+      <tr></tr>
+    </thead>
+
+    <!-- corpo da tabela -->
+    <tbody>
+      <!-- usuando a função foreach para percorrer o array de usuarios -->
+      <%usuarios.forEach((usuario) => { %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.usuario %></td>
+        <td><%= usuario.email %></td>
+        <td><%= usuario.tipo %></td>
+        <!-- PAREI DE COPIAR PRODUTOS A PARTIR DAQUI, o td e companhia -->
+        <td>
+          <!--botão de editar -->
+          <a href="/usuarios/<%= usuario.id %>">
+            <button class="btn btn-sm btn-warning me-2">
+                <i class="bi bi-pencil-square"></i>
+            </button>
+          </a>
+
+          <!-- botão de excluir -->
+          <a href="#">
+            <button class="btn btn-sm btn-danger" onclick="confirmaExclusao('<%= usuario.usuario%>', '<%= usuario.id>')" >
+              <i class="bi bi-trash3" ></i>
+            </button>
+          </a>
+
+        </td>
+      </tr>
+      <% }) %>
+
+    </tbody>
+  </table>
+  <% } else { %>
+  <!-- mostra uma mensagem, caso não tenha nenhum usuário cadastrado -->
+  <div class="alert alert-warning text-center mt-5">
+    Nenhum usuário cadastrado no momento.
+  </div>
+  <% } %>
+
+  <script>
+    function confirmaExclusao (nomeUsuario, id){
+        if(confirm(`Deseja realmente excluir o usuário ${nomeUsuario}`)){
+            window.location.href = `/usuarios/deletar/${id}`
+        }
+    }
+  </script>
 </main>
 
 <%- include('../partials/footer') %>
