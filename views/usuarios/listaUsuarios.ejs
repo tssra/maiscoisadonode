@@ -23,38 +23,39 @@
         <th scope="col">Ações</th>
       </tr>
 
-      <tr></tr>
     </thead>
 
     <!-- corpo da tabela -->
     <tbody>
       <!-- usuando a função foreach para percorrer o array de usuarios -->
-      <%usuarios.forEach((usuario) => { %>
+      <% usuarios.forEach((usuario) => { %>
       <tr>
         <td><%= usuario.id %></td>
         <td><%= usuario.usuario %></td>
         <td><%= usuario.email %></td>
         <td><%= usuario.tipo %></td>
-        <!-- PAREI DE COPIAR PRODUTOS A PARTIR DAQUI, o td e companhia -->
         <td>
           <!--botão de editar -->
           <a href="/usuarios/<%= usuario.id %>">
             <button class="btn btn-sm btn-warning me-2">
-                <i class="bi bi-pencil-square"></i>
+              <i class="bi bi-pencil-square"></i>
+              Editar
             </button>
           </a>
 
           <!-- botão de excluir -->
           <a href="#">
-            <button class="btn btn-sm btn-danger" onclick="confirmaExclusao('<%= usuario.usuario%>', '<%= usuario.id>')" >
-              <i class="bi bi-trash3" ></i>
+            <button
+              class="btn btn-sm btn-danger"
+              onclick="confirmaExclusao('<%= usuario.usuario%>', '<%= usuario.id%>')"
+            >
+              <i class="bi bi-trash3"></i>
+              Excluir
             </button>
           </a>
-
         </td>
       </tr>
       <% }) %>
-
     </tbody>
   </table>
   <% } else { %>
@@ -65,10 +66,10 @@
   <% } %>
 
   <script>
-    function confirmaExclusao (nomeUsuario, id){
-        if(confirm(`Deseja realmente excluir o usuário ${nomeUsuario}`)){
-            window.location.href = `/usuarios/deletar/${id}`
-        }
+    function confirmaExclusao(nomeUsuario, id) {
+      if (confirm(`Deseja realmente excluir o usuário ${nomeUsuario}`)) {
+        window.location.href = `/usuarios/deletar/${id}`;
+      }
     }
   </script>
 </main>

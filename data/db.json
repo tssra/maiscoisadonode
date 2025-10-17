@@ -22,31 +22,104 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "ervilha",
-      "descricao": "sla",
-      "preco": "3,5",
-      "quantidade": "12",
-      "categoria": "alimentos"
+      "nome": "Ervilhas",
+      "descricao": "Ervilhas selecionadas em conserva, prontas para consumo.",
+      "preco": "3,50",
+      "quantidade": "60",
+      "categoria": "Alimentos",
+      "imagem": "https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2023/02/23/804521004-ervilha-em-lata.jpg"
     },
 
     {
       
       "id": 2,
-      "nome": "milho",
-      "descricao": "sla2",
-      "preco": "3,5",
-      "quantidade": "12",
-      "categoria": "alimentos"
+      "nome": "Milho em conserva 200g",
+      "descricao": "Milho doce e macio, ideal para saladas, tortas e acompanhamentos.",
+      "preco": "3,60",
+      "quantidade": "70",
+      "categoria": "Alimentos",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTV_D3E9sg4zd5jp2rRlbpYU0L_UwzYfnwbQ&s"
     },
 
     {
       
       "id": 3,
-      "nome": "salcicha",
-      "descricao": "sla3",
-      "preco": "12,0",
-      "quantidade": "12",
-      "categoria": "alimentos"
+      "nome": "Salsicha Hot Dog 500g",
+      "descricao": "Salsicha tipo Viena com sabor suave, perfeita para lanches e receitas.",
+      "preco": "9,90",
+      "quantidade": "40",
+      "categoria": "Alimentos",
+      "imagem": "https://carrefourbrfood.vtexassets.com/arquivos/ids/32403920/181900_1.jpg?v=637780948668400000"
+    },
+
+    {
+      "id": 4,
+      "nome": "Arroz Branco Tipo 1",
+      "descricao": "Arroz polido, grãos longos e selecionados, ideal para o dia a dia.",
+      "preco": "22,90",
+      "quantidade": "30",
+      "categoria": "Alimentos",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdqLinwL0nd7HWg1J87g666uUNwdl8wUDgmw&s"
+    },
+
+    {
+     "id": 5,
+     "nome": "Feijão Carioca Premium",
+     "descricao": "Feijão selecionado com grãos uniformes e sabor tradicional.",
+     "preco": "9,50",
+     "quantidade": "50",
+     "categoria": "Alimentos",
+     "imagem": "https://static.itdg.com.br/images/640-440/a3733f1b91f87d532f75a85bb28b7da9/shutterstock-2129696204.jpg"
+    },
+
+     {
+     "id": 6,
+     "nome": "Camiseta Básica Algodão",
+     "descricao": "Camiseta unissex 100% algodão, confortável e durável.",
+     "preco": "39,90",
+     "quantidade": "80",
+     "categoria": "Vestuário",
+     "imagem": "https://ssis.nyc3.cdn.digitaloceanspaces.com/fatu/130/produto/media/camiseta-basica-azul-bebe-lacoste-0.webp?_=1659617926"  
+    },
+
+    {
+     "id": 7,
+     "nome": "Detergente Neutro 500ml",
+     "descricao": "Detergente líquido com alto poder de limpeza e perfume suave.",
+     "preco": "4,90",
+     "quantidade": "80",
+     "categoria": "Limpeza",
+     "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOJKSAhieG_VOHmG8gaHceGbzrvnyMqm7UgA&s"  
+    },
+
+    {
+     "id": 8,
+     "nome": "Sabão em Pó 1kg",
+     "descricao": "Sabão em pó com ação profunda para roupas brancas e coloridas.",
+     "preco": "12,90",
+     "quantidade": "80",
+     "categoria": "Limpeza",
+     "imagem": "https://i.ytimg.com/vi/dGnnmfBNHnI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDNjZdDmav6QfgfK1I0qaiN4d3AYg"   
+    },
+
+    {
+     "id": 9,
+     "nome": "Calça Jeans Feminina",
+     "descricao": "Calça jeans com elastano, caimento ajustado e confortável.",
+     "preco": "119,65",
+     "quantidade": "25",
+     "categoria": "Vestuário",
+     "imagem": "https://http2.mlstatic.com/D_NQ_NP_767339-MLB84758644303_052025-O-calca-jeans-feminina-wide-leg-azul-escuro-lancamento-2025.webp" 
+    },
+
+    {
+     "id": 10,
+     "nome": "Jaqueta Corta-Vento Unissex",
+     "descricao": "Jaqueta leve e resistente à água, ideal para o frio e vento.",
+     "preco": "159,00",
+     "quantidade": "15",
+     "categoria": "Vestuário",
+     "imagem": "https://m.media-amazon.com/images/I/41zPdAP8KPL._SY1000_.jpg"
     }
   ]
 }

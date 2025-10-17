@@ -20,9 +20,9 @@ module.exports = {
     );
   },
 
-  listarProdutos: (req, res) => {
+    listarProdutos: (req, res) => {
     const produtos = produtoModel.listarTodos();
-    res.json(produtos);
+    res.render("produtos/listagemProdutos", {produtos, titulo: "Lista de Produtos"});
    },
    buscarProduto: (req, res) => {
     const id = req.params.id;
