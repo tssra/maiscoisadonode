@@ -4,18 +4,21 @@
       "id": 1,
       "usuario": "Sa",
       "email": "sa.m@gmail.com",
+      "tipo": "Administrador",
       "senha": "7"
     },
     {
       "id": 2,
       "usuario": "Ale",
       "email": "Aless@gmail.com",
+      "tipo": "Gerente",
       "senha": "2014"
     },
     {
       "id": 3,
       "usuario": "sla",
       "email": "oooo@gmail.com",
+      "tipo": "Funcionário",
       "senha": "336"
     }
   ],

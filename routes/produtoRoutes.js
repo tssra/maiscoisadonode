@@ -4,18 +4,19 @@ const roteador = express.Router()
 
 const produtoController = require("../controllers/produtoController") 
 
+//C
 roteador.get("/cadastrar", produtoController.formCadastro) 
 
 roteador.post("/cadastrar", produtoController.salvarProduto) 
 
+//R
 roteador.get("/", produtoController.listarProdutos) 
 
 roteador.get("/:id", produtoController.buscarProduto) 
 
+//U
+roteador.post("/:id", produtoController.atualizarProduto)
 
-roteador.put("/:id", produtoController.atualizarProduto)
-
-//D = deletar (delete) um usuário
-roteador.delete("/:id", produtoController.deletarProduto)
+roteador.get("/:id", produtoController.deletarProduto)
 
 module.exports = roteador 

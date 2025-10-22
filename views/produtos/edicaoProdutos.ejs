@@ -1,0 +1,65 @@
+<%- include('../partials/header') %>
+
+<main class="container d-flex flex-column flex-fill justify-content-center" >
+<h1  class="text-center">Edição de Produto</h1>
+
+<!-- criando formulário -->
+<form action="/produtos/<%= produto.id %>" method="POST" >
+
+    <!-- nome do produto -->
+    <div class="mb-3" >
+     <label for="inputNome" class="form-label fs-2 mt-2" > Nome de produto </label>
+     <input type="text" id="inputNome" class="form-control form-control-lg" placeholder="Digite o nome de produto" name="nome" required
+     value="<%= produto.nome %>" >
+    </div>
+
+    <!-- descrição -->
+    <label for="inputDescricao" class="form-label fs-2 mt-2">Descrição</label>
+    <input type="text" id="inputdescricao" class="form-control form-control-lg" placeholder="Digite a descrição do produto" name="descricao" required="" value="<%= produto.descricao %>" >
+   
+<div class="row" >
+<div class="col-md-6">
+ <!-- categoria -->
+    <label for="inputCategoria" class="form-label fs-2 mt-2" name="categoria" >Categori de produto</label>
+    <select id="categoria" class="form-control form-control-lg">
+    <option value="Alimentos" <%= produto.tipo === "Alimentos" ? "selected" : "" %>>Alimentos</option>
+    <option value="Limpeza"   <%= produto.tipo === "Limpeza" ? "selected" : "" %>>Limpeza</option>
+    <option value="Vestuário" <%= produto.tipo === "Vestuário" ? "selected" : "" %>>Vestuário</option>
+    </select>
+
+    <!-- preço -->
+      <label for="inputPreco" class="form-label fs-2 mt-2">Preço</label>
+      <input type="number" id="inputpreco" class="form-control form-control-lg" placeholder="Digite o preço" name="preco" required=""  value="<%= produto.preco %>">
+
+      <!-- quantidade -->
+         <label for="inputQuantidade" class="form-label fs-2 mt-2">Quantidade</label>
+      <input type="text" id="inputquantidade" class="form-control form-control-lg" placeholder="Digite a quantidade do produto" name="quantidade" required=""  value="<%= produto.quantidade %>">
+ 
+</div>
+<!-- imagem do produto -->
+<div class="col-md-6">
+      <label for="inputImg" class="form-label fs-2 mt-2">Imagem do Produto</label>
+      <input type="url" name="imgUrl" class="form-control form-control-lg" id="inputImagem" placeholder="Digite o link de imagem do produto">  
+       <img src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png" id="previewImagem" width="250px" height="250px" class="mt-2 d-block mx-auto"  value="<%= produto.imagem %>">
+</div>
+       </div>
+       <button  type="submit" class="btn btn-lg btn-primary mt-2" >
+        Editar
+       </button>
+</form>
+<script>
+    const inputImagem = document.getElementById("inputImagem")
+
+    const previewImagem = document.getElementById("previewImagem")
+
+    const imagemPadrão = "https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png"
+
+    inputImagem.addEventListener("input", () => {
+
+        const url = inputImagem.value
+        previewImagem.src = url || imagemPadrão
+    })
+</script>
+</main>
+
+<%- include('../partials/footer') %>

@@ -24,13 +24,20 @@ module.exports = {
     const produtos = produtoModel.listarTodos();
     res.render("produtos/listagemProdutos", {produtos, titulo: "Lista de Produtos"});
    },
+   
    buscarProduto: (req, res) => {
     const id = req.params.id;
     const produto = produtoModel.buscarPorId(id);
      if (!produto) {
-      return res.status(404).json({ mensagem: "Produto não encontrado" });
+      return res.status(404).render("produtos/erroProdutos", {
+        titulo: "erro",
+        mensagem: "Produto não encontrado"
+      })
     }
-    res.json(produto);
+    res.render("produtos/edicaoProdutos",{
+      titulo: "Editar",
+      produto
+    });
   },
 
   atualizarProduto: (req, res) => {

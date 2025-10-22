@@ -11,13 +11,13 @@ module.exports = {
     },
 
     //CRUD
-    salvar : ({usuario,email,senha, tipo}) => { //função para cadastrar um novo usuario
+    salvar : ({usuario,email,tipo,senha}) => { //função para cadastrar um novo usuario
         const novoUsuario = {
           id: listaUsuarios.length + 1,
           usuario,
           email,
-          senha, 
-          tipo
+          tipo,
+          senha
         }
 
         listaUsuarios.push(novoUsuario)
@@ -34,7 +34,7 @@ module.exports = {
     },
 
     //
-    atualizar: (id, {usuario,email,senha}) => { //busca na lista de usuarios um id especifico, se achar, pega o index dele e guarda na varivael index
+    atualizar: (id, {usuario, email, tipo, senha}) => { //busca na lista de usuarios um id especifico, se achar, pega o index dele e guarda na varivael index
         const index = listaUsuarios.findIndex((user) => user.id == id)
         
         if(index === -1) return null //se não achar, significa que um usuário com aquele index nao xiste
@@ -43,6 +43,7 @@ module.exports = {
         ...listaUsuarios[index],
         usuario: usuario || listaUsuarios [index].usuario,
         email: email || listaUsuarios [index].email,
+        tipo: tipo || listaUsuarios [index].tipo,
         senha: senha || listaUsuarios [index].senha
         }
     

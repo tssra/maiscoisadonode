@@ -14,17 +14,14 @@ roteador.get("/cadastrar", userController.formCadastro) //rota para solicitar a 
 roteador.post("/cadastrar", userController.salvarUsuario) // rota para enviar dados de cadastro
 
 //R = Ler usuários
-
 roteador.get("/", userController.listarUsuarios) //retorna as infos de todos os usuários
 
-roteador.get("/usuario/:id", userController.buscarUsuario) //retorna as infosde um usuário apenas
+roteador.get("/:id", userController.buscarUsuario) //retorna as infosde um usuário apenas
 
 //U = atualizar (update) um usuário
-roteador.put("/usuario/:id", userController.atualizarUsuario)
+roteador.post("/:id", userController.atualizarUsuario)
 
 //D = deletar (delete) um usuário
-roteador.delete("/usuario/:id", userController.deletarUsuario)
-
+roteador.get("/:id", userController.deletarUsuario)
 
 module.exports = roteador; //criando a exportação desse arquivo 
-
