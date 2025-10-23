@@ -1,41 +1,45 @@
 const path = require("path");
-
-const db = require('../data/db.json');
-
 const produtoModel = require("../models/produtoModel");
 
 module.exports = {
   formCadastro: (req, res) => {
-    res.render("produtos/cadastroProdutos", { titulo: "Cadastro de Produtos"});
+    res.render("produtos/cadastroProdutos", { 
+      titulo: "Cadastro de Produtos"
+    });
   },
 
-    salvarProduto: (req, res) => {
+  salvarProduto: (req, res) => {
     const { id, nome, descricao, preco, quantidade, categoria } = req.body;
-    produtoNovo = produtoModel.salvar ({ id, nome, descricao, preco, quantidade, categoria })
-    res.render("produtos/confirmacaoProdutos", { 
-    tipo: "cadastro",
-    titulo: "Cadastro confirmado",
-    produtoNovo
-    }
-    );
+    const produtoNovo = produtoModel.salvar({ id, nome, descricao, preco, quantidade, categoria });
+
+    res.render("produtos/confirmacaoProdutos", {
+      titulo: "Cadastro confirmado",
+      tipo: "cadastro",
+      produto: produtoNovo
+    });
   },
 
-    listarProdutos: (req, res) => {
+  listarProdutos: (req, res) => {
     const produtos = produtoModel.listarTodos();
-    res.render("produtos/listagemProdutos", {produtos, titulo: "Lista de Produtos"});
-   },
-   
-   buscarProduto: (req, res) => {
+    res.render("produtos/listagemProdutos", { 
+      produtos, 
+      titulo: "Lista de Produtos" 
+    });
+  },
+  
+  buscarProduto: (req, res) => {
     const id = req.params.id;
     const produto = produtoModel.buscarPorId(id);
-     if (!produto) {
+    
+    if (!produto) {
       return res.status(404).render("produtos/erroProdutos", {
-        titulo: "erro",
+        titulo: "Erro",
         mensagem: "Produto não encontrado"
-      })
+      });
     }
-    res.render("produtos/edicaoProdutos",{
-      titulo: "Editar",
+
+    res.render("produtos/edicaoProdutos", {
+      titulo: "Editar Produto",
       produto
     });
   },
@@ -43,6 +47,7 @@ module.exports = {
   atualizarProduto: (req, res) => {
     const id = req.params.id;
     const { nome, descricao, preco, quantidade, categoria } = req.body;
+
     const produtoAtualizado = produtoModel.atualizar(id, {
       nome,
       descricao,
@@ -52,21 +57,34 @@ module.exports = {
     });
 
     if (!produtoAtualizado) {
-      return res.status(404).json({
-        produtoAtualizado: produtoAtualizado,
-        mensagem: "Produto não encontrado",
+      return res.status(404).render("produtos/erroProdutos", {
+        titulo: "Erro",
+        mensagem: "Produto não encontrado"
       });
     }
-    res.json({ mensagem: "Produto foi atualizado" });
+
+    res.render("produtos/confirmacaoProdutos", {
+      titulo: "Edição Confirmada",
+      tipo: "edicao",   // MINÚSCULO para bater com o EJS
+      produto: produtoAtualizado
+    });
   },
- 
+
   deletarProduto: (req, res) => {
     const id = req.params.id;
-    const deletado = produtoModel.deletar(id);
+    const produtoDeletado = produtoModel.deletar(id);
 
-    if (!deletado) {
-      return res.status(404).json({ mensagem: "Produto não encontrado" });
+    if (!produtoDeletado) {
+      return res.status(404).render("produtos/erroProdutos", {
+        titulo: "Erro",
+        mensagem: "Produto não encontrado"
+      });
     }
-    res.json({ deletado: deletado, mensagem: "Produto foi deletado" });
+
+    res.render("produtos/confirmacaoProdutos", {
+      titulo: "Produto Excluído",
+      tipo: "deletado",
+      produto: produtoDeletado
+    });
   },
 };

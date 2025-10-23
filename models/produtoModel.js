@@ -27,7 +27,6 @@ module.exports = {
        return listaProdutos.find((produto) => produto.id == id || null) 
     },
 
-    //
     atualizar: (id, {nome, descricao, preco, quantidade, categoria}) => { 
         const index = listaProdutos.findIndex((produtos) => produtos.id == id)
         
@@ -35,12 +34,11 @@ module.exports = {
 
         listaProdutos[index] = {
         ...listaProdutos[index],
-        listaProdutos: produtos || listaProdutos [index].produtos,
-        listaProdutos: nome || listaProdutos [index].nome,
-        listaProdutos: descricao || listaProdutos [index].descricao,
-        listaProdutos: preco || listaProdutos [index].preco,
-        listaProdutos: quantidade || listaProdutos [index].quantidade,
-        listaProdutos: categoria || listaProdutos [index].categoria,
+        nome : nome || listaProdutos [index].nome,
+        descricao : descricao || listaProdutos [index].descricao,
+        preco: preco !== undefined && preco !== '' ? preco : listaProdutos[index].preco,
+        quantidade : quantidade || listaProdutos [index].quantidade,
+        categoria : categoria || listaProdutos [index].categoria,
         }
     
         return listaProdutos[index] 

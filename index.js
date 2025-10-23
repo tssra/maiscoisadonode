@@ -29,7 +29,6 @@ app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`)
 })
 
-
 //rota de página inicial
 app.get("/home", (req,res) => {
   res.status(200) //enviar os status

@@ -1,33 +1,39 @@
 <%- include('../partials/header') %>
 
 <main class="d-flex flex-column flex-fill text-center justify-content-center">
-  <div
-    class="w-50 mx-auto align-content-center bg-success"
-    style="height: 300px"
-  >
-    <% if (tipo === "cadastro") { %>
 
-    <h1 class="text-white">Cadastro de <%- produtoNovo.nome %> realizado</h1>
+    <div class="w-50 mx-auto align-content-center bg-success" style="height: 300px;">
 
-    <% } else if (tipo === "edicao") { %>
-    <h1 class="text-white">Edição de <%- atualizado.produto %> confirmado</h1>
+        <!-- cadastro de produto -->
+        <% if (tipo === "cadastro") { %>
+            <h1 class="text-white">Produto <%= produtoNovo.nome %> cadastrado com sucesso!</h1>
 
-    <% } else { %>
-    <h1 class="text-white">Produto<%- deletado.produto %>excluído</h1>
-    <% } %>
+        <!-- edição de produto -->
+        <% } else if (tipo === "edicao") { %>
+            <h1 class="text-white">Produto <%= produtoAtualizado.nome %> atualizado com sucesso!</h1>
 
-    <a href="/produtos">
-      <button class="btn btn-lg btn-secondary mx-2">
-        Voltar para a lista de produtos
-      </button>
-    </a>
+        <!-- exclusão de produto -->
+        <% } else if (tipo === "exclusao") { %>
+            <h1 class="text-white">Produto <%= produtoDeletado.nome %> excluído com sucesso!</h1>
 
-    <a href="/produtos/cadastroProdutos">
-      <button class="btn btn-lg btn-primary mx-2">
-        Voltar para a página de cadastro
-      </button>
-    </a>
-  </div>
+        <!-- caso não venha tipo -->
+        <% } else { %>
+            <h1 class="text-white">Operação realizada com sucesso!</h1>
+        <% } %>
+
+        <!-- Botões -->
+        <a href="/produtos">
+            <button class="btn btn-lg btn-secondary mx-2">
+                Voltar para a lista de produtos
+            </button>
+        </a>
+
+        <a href="/produtos/cadastrar">
+            <button class="btn btn-lg btn-primary mx-2">
+                Cadastrar novo produto
+            </button>
+        </a>
+    </div>
 </main>
 
 <%- include('../partials/footer') %>

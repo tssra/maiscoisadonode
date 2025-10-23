@@ -20,8 +20,8 @@
 <div class="row" >
 <div class="col-md-6">
  <!-- categoria -->
-    <label for="inputCategoria" class="form-label fs-2 mt-2" name="categoria" >Categori de produto</label>
-    <select id="categoria" class="form-control form-control-lg">
+    <label for="inputCategoria" class="form-label fs-2 mt-2" name="categoria" >Categoria de produto</label>
+    <select id="categoria" name="categoria" class="form-control form-control-lg">
     <option value="Alimentos" <%= produto.tipo === "Alimentos" ? "selected" : "" %>>Alimentos</option>
     <option value="Limpeza"   <%= produto.tipo === "Limpeza" ? "selected" : "" %>>Limpeza</option>
     <option value="Vestuário" <%= produto.tipo === "Vestuário" ? "selected" : "" %>>Vestuário</option>
@@ -39,8 +39,8 @@
 <!-- imagem do produto -->
 <div class="col-md-6">
       <label for="inputImg" class="form-label fs-2 mt-2">Imagem do Produto</label>
-      <input type="url" name="imgUrl" class="form-control form-control-lg" id="inputImagem" placeholder="Digite o link de imagem do produto">  
-       <img src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png" id="previewImagem" width="250px" height="250px" class="mt-2 d-block mx-auto"  value="<%= produto.imagem %>">
+      <input type="url" name="imgUrl" class="form-control form-control-lg" id="inputImagem" placeholder="Digite o link de imagem do produto" value="<%= produto.imagem %>">  
+       <img src="<%= produto.imagem %>" id="previewImagem" width="250px" height="250px" class="mt-2 d-block mx-auto" value="<%= produto.imagem %>">
 </div>
        </div>
        <button  type="submit" class="btn btn-lg btn-primary mt-2" >
