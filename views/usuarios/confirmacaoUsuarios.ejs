@@ -1,39 +1,46 @@
+<!-- Cabecalho principal  -->
 <%- include('../partials/header') %>
 
+<!-- Conteudo do index  -->
 <main class="d-flex flex-column flex-fill text-center justify-content-center">
+  <div
+    class="w-50 mx-auto align-content-center bg-success"
+    style="height: 300px"
+  >
+    <!-- Se a página que chamou for a de cadastro, mostra que o cadastro foi realizado, mostrando o nome do usuário que acabou de ser cadastrado -->
+    <% if (tipo == "cadastro") { %>
+    <h1 class="text-white">
+      <!-- Pega o nome de quem foi cadastrado, vindo do objeto usuarioNovo -->
+      Cadastro de <%- usuarioNovo.usuario %> realizado
+    </h1>
+    <!-- Se a página que chamou for a de edição, mostra que o usuário foi editado -->
+    <% } else if (tipo == "edicao") { %>
+    <h1 class="text-white">
+      <!-- Pega o nome de quem foi atualizado, vindo do objeto atualizado -->
+      Edição de <%- usuarioAtualizado.usuario %> confirmado
+    </h1>
+    <!-- Se a página que chamou for a de deletar usuário, mostra que o usuário foi excluído -->
+    <% } else { %>
+        <h1 class="text-white">
+        <!-- Pega o nome de quem foi deletado, vindo do objeto deletado -->
+        Usuário <%- deletado.usuario %> excluído
+        </h1>
+    <% } %>
 
-    <div class="w-50 mx-auto align-content-center bg-success" style="height: 300px;">
+    <!-- Criando botões para outras páginas -->
+    <a href="/usuarios"> 
+        <button class="btn btn-lg btn-secondary mx-2">
+            Voltar para lista de usuários
+        </button>
+    </a>
 
-        <!-- cadastro de produto -->
-        <% if (tipo === "cadastro") { %>
-            <h1 class="text-white">Produto <%= produtoNovo.nome %> cadastrado com sucesso!</h1>
-
-        <!-- edição de produto -->
-        <% } else if (tipo === "edicao") { %>
-            <h1 class="text-white">Produto <%= produtoAtualizado.nome %> atualizado com sucesso!</h1>
-
-        <!-- exclusão de produto -->
-        <% } else if (tipo === "exclusao") { %>
-            <h1 class="text-white">Produto <%= produtoDeletado.nome %> excluído com sucesso!</h1>
-
-        <!-- caso não venha tipo -->
-        <% } else { %>
-            <h1 class="text-white">Operação realizada com sucesso!</h1>
-        <% } %>
-
-        <!-- Botões -->
-        <a href="/produtos">
-            <button class="btn btn-lg btn-secondary mx-2">
-                Voltar para a lista de produtos
-            </button>
-        </a>
-
-        <a href="/produtos/cadastrar">
-            <button class="btn btn-lg btn-primary mx-2">
-                Cadastrar novo produto
-            </button>
-        </a>
-    </div>
+    <a href="/usuarios/cadastrar">
+        <button class="btn btn-lg btn-primary mx-2">
+            Voltar para página de cadastro
+        </button>
+    </a>
+  </div>
 </main>
 
+<!-- Rodape de todas as páginas  -->
 <%- include('../partials/footer') %>

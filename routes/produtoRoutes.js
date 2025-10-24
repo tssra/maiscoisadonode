@@ -17,6 +17,6 @@ roteador.get("/:id", produtoController.buscarProduto)
 //U
 roteador.post("/:id", produtoController.atualizarProduto)
 
-roteador.get("/:id", produtoController.deletarProduto)
+roteador.get("/deletar/:id", produtoController.deletarProduto)
 
 module.exports = roteador 

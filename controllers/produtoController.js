@@ -38,7 +38,7 @@ module.exports = {
       });
     }
 
-    res.render("produtos/edicaoProdutos", {
+    res.render("produtos/editarProdutos", {
       titulo: "Editar Produto",
       produto
     });
@@ -65,16 +65,16 @@ module.exports = {
 
     res.render("produtos/confirmacaoProdutos", {
       titulo: "Edição Confirmada",
-      tipo: "edicao",   // MINÚSCULO para bater com o EJS
+      tipo: "edicao",
       produto: produtoAtualizado
     });
   },
 
   deletarProduto: (req, res) => {
     const id = req.params.id;
-    const produtoDeletado = produtoModel.deletar(id);
+    const deletado = produtoModel.deletar(id);
 
-    if (!produtoDeletado) {
+    if (!deletado) {
       return res.status(404).render("produtos/erroProdutos", {
         titulo: "Erro",
         mensagem: "Produto não encontrado"
@@ -83,8 +83,8 @@ module.exports = {
 
     res.render("produtos/confirmacaoProdutos", {
       titulo: "Produto Excluído",
-      tipo: "deletado",
-      produto: produtoDeletado
+      tipo: "deletar",
+      deletado
     });
   },
 };
